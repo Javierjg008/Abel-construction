@@ -176,14 +176,19 @@ main {
 }
 
 /* CARDS */
-.cards-row {
+.cards-row,
+.project-cards,
+.about-cards {
   display: flex;
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.card {
+/* Service Cards */
+.card,
+.project-card,
+.about-card {
   background: #fff;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -197,11 +202,15 @@ main {
   align-items: flex-start;
   transition: box-shadow .22s, transform .23s;
 }
-.card:hover, .card:focus-within {
+.card:hover, .card:focus-within,
+.project-card:hover, .project-card:focus-within,
+.about-card:hover, .about-card:focus-within {
   box-shadow: 0 10px 32px 0 rgba(0,44,204,.10);
   transform: scale(1.04) rotate(-2deg);
 }
-.card h3 { margin-top: 0; }
+.card h3,
+.project-card h3,
+.about-card h3 { margin-top: 0; }
 
 .project-image-placeholder {
   width: 100%;
@@ -212,7 +221,19 @@ main {
   display: block;
 }
 
-/* CONTACT */
+.btn-link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-size: 1em;
+  margin-top: 1.2em;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.btn-link:hover {
+  color: var(--accent-dark);
+}
+
+/* CONTACT (for future use) */
 .contact-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -287,7 +308,7 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .cards-row, .contact-wrapper {
+  .cards-row, .project-cards, .about-cards, .contact-wrapper {
     flex-direction: column;
     align-items: center;
   }
@@ -316,7 +337,7 @@ footer {
   .nav-links {
     gap: 0.7rem;
   }
-  .card, .contact-info, .contact-form {
+  .card, .project-card, .about-card, .contact-info, .contact-form {
     padding: 1rem 0.7rem;
     min-width: unset;
     max-width: 97vw;
