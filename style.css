@@ -322,3 +322,14 @@ footer {
     max-width: 97vw;
   }
 }
+
+/* SCROLL ENTRANCE ANIMATION */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px) scale(.96);
+  transition: opacity 0.7s cubic-bezier(.25,1.5,.5,1), transform 0.7s cubic-bezier(.25,1.5,.5,1);
+}
+.scroll-animate.visible {
+  opacity: 1;
+  transform: none;
+}
