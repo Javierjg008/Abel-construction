@@ -1,10 +1,12 @@
 :root {
-  --accent: #0044cc;
-  --accent-dark: #002f99;
-  --bg: #f5f7fa;
-  --header-bg: #f9fbff;
-  --text: #1a2233;
-  --shadow: 0 2px 16px 0 rgba(34, 53, 110, 0.09);
+  --accent: #005A9C;
+  --accent-dark: #003e6b;
+  --cta: #FF6A00;
+  --bg: #f9f9f9;
+  --bg-alt: #f1f1f1;
+  --header-bg: #fff;
+  --text: #333333;
+  --shadow: 0 2px 16px 0 rgba(34, 53, 110, 0.06);
   --radius: 10px;
   --transition: all 0.28s cubic-bezier(.4, 0, .2, 1);
   --bouncy: cubic-bezier(.25,1.5,.5,1);
@@ -27,7 +29,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  background: #fff;
+  background: var(--header-bg);
   box-shadow: var(--shadow);
   z-index: 1000;
   height: 64px;
@@ -51,10 +53,11 @@ body {
   color: var(--accent);
   letter-spacing: 2px;
   transition: color .23s;
+  text-decoration: none;
 }
 
 .nav-logo:hover {
-  color: var(--accent-dark);
+  color: var(--cta);
 }
 
 .nav-links {
@@ -94,7 +97,7 @@ body {
   display: block;
   width: 0;
   height: 2px;
-  background: #fff;
+  background: var(--cta);
   border-radius: 2px;
   transition: width 0.21s;
   margin: 0.1em auto 0 auto;
@@ -148,10 +151,22 @@ body {
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background: var(--accent-dark);
+  background: var(--cta);
   color: #fff;
-  box-shadow: 0 8px 30px 0 rgba(0,44,204,.13);
+  box-shadow: 0 8px 30px 0 rgba(255,106,0,.10);
   transform: scale(1.05);
+}
+
+.btn-link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-size: 1em;
+  margin-top: 1.2em;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.btn-link:hover {
+  color: var(--cta);
 }
 
 /* MAIN LAYOUT */
@@ -163,6 +178,7 @@ main {
 
 .section {
   padding: 2.5rem 0 2rem 0;
+  background: var(--bg);
 }
 
 .centered {
@@ -172,7 +188,7 @@ main {
 .section-lead {
   font-size: 1.12rem;
   margin-bottom: 2rem;
-  color: #3e4a63;
+  color: #444;
 }
 
 /* CARDS */
@@ -185,7 +201,6 @@ main {
   flex-wrap: wrap;
 }
 
-/* Service Cards */
 .card,
 .project-card,
 .about-card {
@@ -205,32 +220,28 @@ main {
 .card:hover, .card:focus-within,
 .project-card:hover, .project-card:focus-within,
 .about-card:hover, .about-card:focus-within {
-  box-shadow: 0 10px 32px 0 rgba(0,44,204,.10);
+  box-shadow: 0 10px 32px 0 rgba(0,90,156,.12);
   transform: scale(1.04) rotate(-2deg);
 }
 .card h3,
 .project-card h3,
-.about-card h3 { margin-top: 0; }
+.about-card h3 { margin-top: 0; color: var(--text); }
 
 .project-image-placeholder {
   width: 100%;
   height: 140px;
-  background: #e0e7f7;
+  background: var(--bg-alt);
   border-radius: 8px;
   margin-bottom: 1rem;
   display: block;
 }
 
-.btn-link {
-  color: var(--accent);
-  text-decoration: underline;
-  font-size: 1em;
-  margin-top: 1.2em;
-  font-weight: 600;
-  transition: color 0.18s;
-}
-.btn-link:hover {
-  color: var(--accent-dark);
+/* ABOUT DIVIDER */
+.about-divider {
+  border: none;
+  border-top: 2px solid #e1e5ee;
+  width: 50px;
+  margin: 1rem auto;
 }
 
 /* CONTACT (for future use) */
@@ -262,7 +273,8 @@ main {
   border-radius: 6px;
   font-size: 1em;
   font-family: inherit;
-  background: #f5f7fa;
+  background: var(--bg-alt);
+  color: var(--text);
   transition: border-color 0.2s, box-shadow .18s;
 }
 .contact-form input:focus,
@@ -297,7 +309,7 @@ main {
 /* FOOTER */
 footer {
   background: #fff;
-  color: #9aa4bc;
+  color: #888;
   font-size: 1em;
   box-shadow: 0 -1px 10px 0 rgba(34,53,110,0.03);
   padding: 2rem 0 1.2rem 0;
